@@ -13,13 +13,12 @@
 
 <div class = "container">
 	<% flash.each do |name, msg| %>
-     	<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+     	<%= content_tag(:div, msg, class: "alert alert-info") %>
 	<% end %>
 
 <%= yield %>
-
 <% if user_signed_in? %>
-	<p>Hey, you're <%= current_user.email %></p>
+	<p><br/>Currently logged in as <%= current_user.email %></p>
 <% end %>	
 </div>
 
